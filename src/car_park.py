@@ -34,3 +34,7 @@ class CarPark:
         for display in self.displays:
             display.update()
             print(f"Updating: {display}")
+
+    @property
+    def available_bays(self):
+        return max(0, self.capacity - len(self.plates))
