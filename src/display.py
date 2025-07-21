@@ -8,3 +8,8 @@ class Display:
 
     def __str__(self):
         return f"{self.id}: Display is {"on" if self.is_on else "off"}"
+
+    def update(self, data):
+        for key, value in data.items():
+            print(f"{key}: {value}")
+
