@@ -476,17 +476,17 @@ Answer the following questions:
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `CarPark is responsible for the number of available bays as the class contains a method named "available_bays" which calculates using CarPark attributes how many available spaces there are.`
 >    - *The current temperature*
->      `Answer here...`
+>      `Current implementation uses the CarPark class as being responsible for the current temperature. The Sensor class in real life may be used as the temperature getter as this device would be the way to get a reading from the real world, then encapsulated into an attribute by the CarPark class.`
 >    - *The time*
->      `Answer here...`
+>      `As a car triggers a sensor a time measurement can be recorded from a time module. I would suggest that getting the time can be taken by the Sensor class as a car is sensed, abstracting the time information similarly to how temperature will work. `
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `Even though accessing information from either dont need to be called as a function, properties make methods behave as attributes.  `
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `Using a dictionary to pass our data here allows multiple values to be passed aswell as improving readability with key, value associations aswell as building dynamic code. A disadvantage may be that we wont later introduce additional data and the use of a dictionary may seem above its needs for passing 2 values.`
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 
