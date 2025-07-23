@@ -11,5 +11,6 @@ class Display:
 
     def update(self, data):
         for key, value in data.items():
-            print(f"{key}: {value}")
+            if hasattr(self, key):
+                setattr(self, key, value)
 
