@@ -784,8 +784,9 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-
+- test
    ![Unit tests failed](screenshots/unit-tests-failed.png)
+- fix
    ![Unit tests pass](screenshots/unit-tests-pass.png)
  
 
@@ -806,7 +807,7 @@ Finally, we'll create tests for the `Sensor` class. These tests will test the `_
 
 The car park register method should accept a `Sensor` (optional) or `Display` object. It should raise a `TypeError` if the object is neither a `Sensor` nor a `Display`. Before proceeding, think about where you would test this behaviour. Should you test it in the `CarPark` unit tests or the `Display`/`Sensor` unit tests? Why?
 
-> Answer here...
+> Answer here... I would suggest that the register method would be implemented in test_car_park as the register method belongs to the CarPark class. We are testing if a method of the CarPark class is working as intended.
 
 Create a new unit test in the `test_car_park.py` file called `test_register_raises_type_error`. This test should create a `CarPark` object and a `str` object. It should then call the `register` method on the `CarPark` object with the `str` object as a parameter. The test should assert that a `TypeError` is raised. Here is a sample implementation:
 
