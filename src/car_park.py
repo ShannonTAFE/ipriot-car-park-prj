@@ -31,21 +31,22 @@ class CarPark:
     def add_car(self, plate):
         self.plates.append(plate)
         self.update_displays()
-        self._log(f"{datetime.now()}: {plate} entered\n")
+        self._log_car_activity(plate, "entered")
 
     def remove_car(self, plate):
         self.plates.remove(plate)
         self.update_displays()
-        self._log(f"{datetime.now()}: {plate} exited\n")
+        self._log_car_activity(plate, "exited")
 
     def update_displays(self):
         for display in self.displays:
             display.update({"available_bays": self.available_bays, "temperature": 25})
             print(f"Updating: {display}")
 
-    def _log(self, message):
+    # in CarPark class
+    def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
-            f.write(message)
+            f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
 
     @property
     def available_bays(self):
